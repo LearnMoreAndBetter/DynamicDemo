@@ -16,6 +16,8 @@
 		C2C3CFAB1EF8E71C00361E83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C3CFA91EF8E71C00361E83 /* Main.storyboard */; };
 		C2C3CFAD1EF8E71C00361E83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C2C3CFAC1EF8E71C00361E83 /* Assets.xcassets */; };
 		C2C3CFB01EF8E71C00361E83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C3CFAE1EF8E71C00361E83 /* LaunchScreen.storyboard */; };
+		C2E3CAA61F022DF40084DAAA /* RMDynamicImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E3CAA51F022DF40084DAAA /* RMDynamicImageView.m */; };
+		C2E3CAA81F022FBE0084DAAA /* icon_ball.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2E3CAA71F022FBE0084DAAA /* icon_ball.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,9 @@
 		C2C3CFAC1EF8E71C00361E83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C2C3CFAF1EF8E71C00361E83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C2C3CFB11EF8E71C00361E83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2E3CAA41F022DF40084DAAA /* RMDynamicImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDynamicImageView.h; sourceTree = "<group>"; };
+		C2E3CAA51F022DF40084DAAA /* RMDynamicImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDynamicImageView.m; sourceTree = "<group>"; };
+		C2E3CAA71F022FBE0084DAAA /* icon_ball.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_ball.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +88,13 @@
 				C2AD4E2D1EF9FED5002381FB /* CommonHeader.h */,
 				C2C3CFA61EF8E71C00361E83 /* ViewController.h */,
 				C2C3CFA71EF8E71C00361E83 /* ViewController.m */,
+				C2E3CAA41F022DF40084DAAA /* RMDynamicImageView.h */,
+				C2E3CAA51F022DF40084DAAA /* RMDynamicImageView.m */,
 				C2AD4E231EF9F78E002381FB /* HannuoTowerVC.h */,
 				C2AD4E241EF9F78E002381FB /* HannuoTowerVC.m */,
 				C2AD4E2A1EF9FD9A002381FB /* TowerLearnInstructionVC.h */,
 				C2AD4E2B1EF9FD9A002381FB /* TowerLearnInstructionVC.m */,
+				C2E3CAA71F022FBE0084DAAA /* icon_ball.jpg */,
 				C2C3CFA91EF8E71C00361E83 /* Main.storyboard */,
 				C2C3CFAC1EF8E71C00361E83 /* Assets.xcassets */,
 				C2C3CFAE1EF8E71C00361E83 /* LaunchScreen.storyboard */,
@@ -166,6 +174,7 @@
 				C2C3CFB01EF8E71C00361E83 /* LaunchScreen.storyboard in Resources */,
 				C2C3CFAD1EF8E71C00361E83 /* Assets.xcassets in Resources */,
 				C2C3CFAB1EF8E71C00361E83 /* Main.storyboard in Resources */,
+				C2E3CAA81F022FBE0084DAAA /* icon_ball.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -176,6 +185,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2E3CAA61F022DF40084DAAA /* RMDynamicImageView.m in Sources */,
 				C2C3CFA81EF8E71C00361E83 /* ViewController.m in Sources */,
 				C2AD4E291EF9FB63002381FB /* RMAlertView.m in Sources */,
 				C2AD4E2C1EF9FD9A002381FB /* TowerLearnInstructionVC.m in Sources */,
