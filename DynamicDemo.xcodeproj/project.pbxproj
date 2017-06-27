@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C2AD4E251EF9F78E002381FB /* HannuoTowerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD4E241EF9F78E002381FB /* HannuoTowerVC.m */; };
 		C2AD4E291EF9FB63002381FB /* RMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD4E281EF9FB63002381FB /* RMAlertView.m */; };
-		C2AD4E2C1EF9FD9A002381FB /* TowerLearnInstructionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD4E2B1EF9FD9A002381FB /* TowerLearnInstructionVC.m */; };
 		C2C3CFA21EF8E71B00361E83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C3CFA11EF8E71B00361E83 /* main.m */; };
 		C2C3CFA51EF8E71C00361E83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C3CFA41EF8E71C00361E83 /* AppDelegate.m */; };
 		C2C3CFA81EF8E71C00361E83 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C3CFA71EF8E71C00361E83 /* ViewController.m */; };
@@ -18,15 +16,13 @@
 		C2C3CFB01EF8E71C00361E83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C3CFAE1EF8E71C00361E83 /* LaunchScreen.storyboard */; };
 		C2E3CAA61F022DF40084DAAA /* RMDynamicImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E3CAA51F022DF40084DAAA /* RMDynamicImageView.m */; };
 		C2E3CAA81F022FBE0084DAAA /* icon_ball.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C2E3CAA71F022FBE0084DAAA /* icon_ball.jpg */; };
+		C2E3CAAE1F0244CB0084DAAA /* HannuoTowerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E3CAAB1F0244CB0084DAAA /* HannuoTowerVC.m */; };
+		C2E3CAAF1F0244CB0084DAAA /* TowerLearnInstructionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2E3CAAD1F0244CB0084DAAA /* TowerLearnInstructionVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C2AD4E231EF9F78E002381FB /* HannuoTowerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HannuoTowerVC.h; sourceTree = "<group>"; };
-		C2AD4E241EF9F78E002381FB /* HannuoTowerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HannuoTowerVC.m; sourceTree = "<group>"; };
 		C2AD4E271EF9FB63002381FB /* RMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAlertView.h; sourceTree = "<group>"; };
 		C2AD4E281EF9FB63002381FB /* RMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMAlertView.m; sourceTree = "<group>"; };
-		C2AD4E2A1EF9FD9A002381FB /* TowerLearnInstructionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TowerLearnInstructionVC.h; sourceTree = "<group>"; };
-		C2AD4E2B1EF9FD9A002381FB /* TowerLearnInstructionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TowerLearnInstructionVC.m; sourceTree = "<group>"; };
 		C2AD4E2D1EF9FED5002381FB /* CommonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonHeader.h; sourceTree = "<group>"; };
 		C2C3CF9D1EF8E71B00361E83 /* DynamicDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C3CFA11EF8E71B00361E83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -41,6 +37,10 @@
 		C2E3CAA41F022DF40084DAAA /* RMDynamicImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDynamicImageView.h; sourceTree = "<group>"; };
 		C2E3CAA51F022DF40084DAAA /* RMDynamicImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDynamicImageView.m; sourceTree = "<group>"; };
 		C2E3CAA71F022FBE0084DAAA /* icon_ball.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = icon_ball.jpg; sourceTree = "<group>"; };
+		C2E3CAAA1F0244CB0084DAAA /* HannuoTowerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HannuoTowerVC.h; sourceTree = "<group>"; };
+		C2E3CAAB1F0244CB0084DAAA /* HannuoTowerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HannuoTowerVC.m; sourceTree = "<group>"; };
+		C2E3CAAC1F0244CB0084DAAA /* TowerLearnInstructionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TowerLearnInstructionVC.h; sourceTree = "<group>"; };
+		C2E3CAAD1F0244CB0084DAAA /* TowerLearnInstructionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TowerLearnInstructionVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				C2AD4E261EF9FB63002381FB /* RMAlertView */,
+				C2E3CAA91F0244CB0084DAAA /* HannuoTower */,
 				C2C3CFA31EF8E71C00361E83 /* AppDelegate.h */,
 				C2C3CFA41EF8E71C00361E83 /* AppDelegate.m */,
 				C2AD4E2D1EF9FED5002381FB /* CommonHeader.h */,
@@ -90,10 +91,6 @@
 				C2C3CFA71EF8E71C00361E83 /* ViewController.m */,
 				C2E3CAA41F022DF40084DAAA /* RMDynamicImageView.h */,
 				C2E3CAA51F022DF40084DAAA /* RMDynamicImageView.m */,
-				C2AD4E231EF9F78E002381FB /* HannuoTowerVC.h */,
-				C2AD4E241EF9F78E002381FB /* HannuoTowerVC.m */,
-				C2AD4E2A1EF9FD9A002381FB /* TowerLearnInstructionVC.h */,
-				C2AD4E2B1EF9FD9A002381FB /* TowerLearnInstructionVC.m */,
 				C2E3CAA71F022FBE0084DAAA /* icon_ball.jpg */,
 				C2C3CFA91EF8E71C00361E83 /* Main.storyboard */,
 				C2C3CFAC1EF8E71C00361E83 /* Assets.xcassets */,
@@ -110,6 +107,17 @@
 				C2C3CFA11EF8E71B00361E83 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C2E3CAA91F0244CB0084DAAA /* HannuoTower */ = {
+			isa = PBXGroup;
+			children = (
+				C2E3CAAA1F0244CB0084DAAA /* HannuoTowerVC.h */,
+				C2E3CAAB1F0244CB0084DAAA /* HannuoTowerVC.m */,
+				C2E3CAAC1F0244CB0084DAAA /* TowerLearnInstructionVC.h */,
+				C2E3CAAD1F0244CB0084DAAA /* TowerLearnInstructionVC.m */,
+			);
+			path = HannuoTower;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,8 +196,8 @@
 				C2E3CAA61F022DF40084DAAA /* RMDynamicImageView.m in Sources */,
 				C2C3CFA81EF8E71C00361E83 /* ViewController.m in Sources */,
 				C2AD4E291EF9FB63002381FB /* RMAlertView.m in Sources */,
-				C2AD4E2C1EF9FD9A002381FB /* TowerLearnInstructionVC.m in Sources */,
-				C2AD4E251EF9F78E002381FB /* HannuoTowerVC.m in Sources */,
+				C2E3CAAF1F0244CB0084DAAA /* TowerLearnInstructionVC.m in Sources */,
+				C2E3CAAE1F0244CB0084DAAA /* HannuoTowerVC.m in Sources */,
 				C2C3CFA51EF8E71C00361E83 /* AppDelegate.m in Sources */,
 				C2C3CFA21EF8E71B00361E83 /* main.m in Sources */,
 			);

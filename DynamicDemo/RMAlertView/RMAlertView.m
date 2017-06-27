@@ -31,16 +31,30 @@ static UIWindow *_alertWindow;
 #pragma mark - HUD
 + (void)showMessage:(NSString *)text afterDelay:(NSTimeInterval)delay
 {
+	if (![text length]) {
+		return;
+	}
+	
 	UIAlertController *alertCtrl = [UIAlertController alertControllerWithTitle:nil message:text preferredStyle:UIAlertControllerStyleAlert];
+	
 	NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:text attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0],NSForegroundColorAttributeName:[UIColor whiteColor]}];
 	[alertCtrl setValue:messageStr forKey:@"attributedMessage"];
 	
 	//背景色
-	UIView *firstSubview = alertCtrl.view.subviews.firstObject;
-	UIView *alertContentView = firstSubview.subviews.firstObject;
-	for (UIView *subSubView in alertContentView.subviews) { //This is main catch
-		subSubView.backgroundColor = RGBACOLOR(0, 0, 0, 0.6); //Here you change background
+	if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10) {
+		UIView *firstSubview = alertCtrl.view.subviews.firstObject;
+		UIView *alertContentView = firstSubview.subviews.firstObject;
+		
+		for (UIView *subSubView in alertContentView.subviews) { //This is main catch
+			subSubView.backgroundColor = RGBACOLOR(0, 0, 0, 0.6); //Here you change background
+		}
+	}else{
+		UIView *firstSubview = alertCtrl.view.subviews.lastObject;
+		UIView *alertContentView = firstSubview.subviews.lastObject;
+		alertContentView.layer.cornerRadius = 6;
+		alertContentView.backgroundColor = [UIColor darkGrayColor];
 	}
+
 	
 	[[RMAlertView alertWindow] makeKeyAndVisible];
 	[[RMAlertView alertWindow].rootViewController presentViewController:alertCtrl animated:YES completion:nil];
