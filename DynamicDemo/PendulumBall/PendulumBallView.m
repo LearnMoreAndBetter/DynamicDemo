@@ -88,21 +88,14 @@
 
 
 - (void)drawRect:(CGRect)rect {
-	
-	// 1. 获取路径
+
 	UIBezierPath *bezierPath = [UIBezierPath bezierPath];
-	
-	// 2. 划线
 	[bezierPath moveToPoint:self.anchorView.center];
-	
 	[bezierPath addLineToPoint:self.ball.center];
-	
 	bezierPath.lineWidth = 6;
 	
 	[[UIColor orangeColor] setStroke];
-	// 3. 渲染
 	[bezierPath stroke];
-	
 }
 
 
@@ -110,7 +103,6 @@
 -(void)dealloc
 {
 	[self.ball removeObserver:self forKeyPath:@"center"];
-	
 }
 
 //监听
@@ -160,7 +152,7 @@
 - (UIGravityBehavior *)gravity{
 	if (!_gravity) {
 		_gravity = [[UIGravityBehavior alloc]initWithItems:@[self.ball]];
-		_gravity.magnitude = 10; //加速度
+		_gravity.magnitude = 9.8; //加速度
 	}
 	return _gravity;
 }
