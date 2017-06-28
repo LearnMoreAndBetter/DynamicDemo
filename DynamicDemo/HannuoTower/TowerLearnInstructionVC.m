@@ -96,8 +96,8 @@
 
 - (UITableView *)tableView{
 	if (!_tableView) {
-		UITableView *tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-		tableView.showsVerticalScrollIndicator = NO;
+		UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, APP_SCREEN_WIDTH, APP_SCREEN_HEIGHT - 64) style:UITableViewStylePlain];
+		tableView.showsVerticalScrollIndicator = YES;
 		[tableView setDataSource:self];
 		[tableView setDelegate:self];
 		tableView.backgroundColor = [UIColor whiteColor];

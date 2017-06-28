@@ -9,6 +9,8 @@
 #ifndef CommonHeader_h
 #define CommonHeader_h
 
+#import "RMAlertView.h"
+
 #define APP_SCREEN_WIDTH	[UIScreen mainScreen].bounds.size.width
 #define APP_SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
 //主色调－－深绿

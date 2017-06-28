@@ -13,7 +13,7 @@
 @interface HannuoTowerVC ()<CAAnimationDelegate>
 {
 	NSInteger _index;//步骤数
-	
+	dispatch_queue_t _globalQueue;
 }
 
 //@property (copy, nonatomic)NSMutableArray *instructionLists;//存放文字解说
@@ -37,6 +37,7 @@
 	[self addRightNavButton];
 	
 	[self addSubviews];
+	
 }
 
 - (void)addRightNavButton{
@@ -47,16 +48,16 @@
 - (void)addSubviews{
 	for (NSInteger i = 0; i < 3; i ++) {
 		CALayer *verticalLayer = [CALayer layer];
-		verticalLayer.frame = CGRectMake(50 + APP_SCREEN_WIDTH/3 * i, APP_SCREEN_HEIGHT/2 - 160, 2, 310);
+		verticalLayer.frame = CGRectMake(50 + APP_SCREEN_WIDTH/3 * i, APP_SCREEN_HEIGHT/2 - 210, 2, 310);
 		verticalLayer.backgroundColor = [UIColor blackColor].CGColor;
 		[self.view.layer addSublayer:verticalLayer];
 		
 		CALayer *horizonalLayer = [CALayer layer];
-		horizonalLayer.frame = CGRectMake(20 + APP_SCREEN_WIDTH/3 * i, APP_SCREEN_HEIGHT/2 + 150, 60, 2);
+		horizonalLayer.frame = CGRectMake(20 + APP_SCREEN_WIDTH/3 * i, APP_SCREEN_HEIGHT/2 + 100, 60, 2);
 		horizonalLayer.backgroundColor = [UIColor blackColor].CGColor;
 		[self.view.layer addSublayer:horizonalLayer];
 		
-		UILabel *towerNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(20 + APP_SCREEN_WIDTH/3 * i, APP_SCREEN_HEIGHT/2 + 155, 60, 20)];
+		UILabel *towerNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(20 + APP_SCREEN_WIDTH/3 * i, APP_SCREEN_HEIGHT/2 + 105, 60, 20)];
 		towerNameLabel.textColor = [UIColor blackColor];
 		towerNameLabel.textAlignment = NSTextAlignmentCenter;
 		[self.view addSubview:towerNameLabel];
@@ -72,15 +73,19 @@
 	[self addPanViews];
 
 	[self.view addSubview:self.startButton];
+	[self.view addSubview:self.resetButton];
 }
 
 - (void)addPanViews{
+	for (UIView *panView in self.panLists) {
+		[panView.layer removeAnimationForKey:@"keyAnimation"];
+	}
 	[self.panLists makeObjectsPerformSelector:@selector(removeFromSuperview)];
 	[self.panLists removeAllObjects];
 	
 	for (NSInteger i = 0; i < self.towerNum; i ++) {
 		CGFloat panWidth = [self panWidth:i + 1];
-		CGFloat y = APP_SCREEN_HEIGHT/2 + 150 - (self.towerNum - i) * [self panHeight];
+		CGFloat y = APP_SCREEN_HEIGHT/2 + 100 - (self.towerNum - i) * [self panHeight];
 		UIView *panView = [[UIView alloc]initWithFrame:CGRectMake(51 - panWidth/2, y, panWidth, [self panHeight])];
 		panView.backgroundColor = [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0];
 		panView.tag = 101 + i;
@@ -127,7 +132,9 @@
 	CTower.towerName = @"C";
 	CTower.towerNum = 0;
 	
-	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+	
+	_globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+	dispatch_async(_globalQueue, ^{
 		[self hannoTowerNum:num TowerA:ATower TowerB:BTower TowerC:CTower];
 	});
 	
@@ -167,16 +174,15 @@
 		finalFrame.origin.x = 51- panWidth/2 + APP_SCREEN_WIDTH/3 * 2;
 	}
 	
-	finalFrame.origin.y = APP_SCREEN_HEIGHT/2 + 150 - toTower.towerNum * [self panHeight];
-	
+	finalFrame.origin.y = APP_SCREEN_HEIGHT/2 + 100 - toTower.towerNum * [self panHeight];
 	_sema = dispatch_semaphore_create(0);// 初始化信号量为0
 	dispatch_async(dispatch_get_main_queue(), ^{
 		UIBezierPath *path = [UIBezierPath bezierPath];
 		[path moveToPoint:CGPointMake(originFrame.origin.x + originFrame.size.width/2, originFrame.origin.y + originFrame.size.height/2)];
 		
-		[path addLineToPoint:CGPointMake(originFrame.origin.x + originFrame.size.width/2, APP_SCREEN_HEIGHT/2 - 160 - originFrame.size.height/2)];
+		[path addLineToPoint:CGPointMake(originFrame.origin.x + originFrame.size.width/2, APP_SCREEN_HEIGHT/2 - 210 - originFrame.size.height/2)];
 		
-		[path addLineToPoint:CGPointMake(finalFrame.origin.x + finalFrame.size.width/2, APP_SCREEN_HEIGHT/2 - 160 - finalFrame.size.height/2)];
+		[path addLineToPoint:CGPointMake(finalFrame.origin.x + finalFrame.size.width/2, APP_SCREEN_HEIGHT/2 - 210 - finalFrame.size.height/2)];
 		
 		[path addLineToPoint:CGPointMake(finalFrame.origin.x + finalFrame.size.width/2, finalFrame.origin.y + finalFrame.size.height/2)];
 		
@@ -190,14 +196,23 @@
 		
 		panView.frame = finalFrame;
 	});
-
+	
 	dispatch_semaphore_wait(_sema, DISPATCH_TIME_FOREVER);// 信号量若没增加，则一直等待，直到动画完成
+	
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
 	if (anim == [_panView.layer animationForKey:@"keyAnimation"]) {
 		dispatch_semaphore_signal(_sema);// 增加信号量，结束等待
+		
 	}
+}
+
+- (void)viewWillDisappear:(BOOL)animated{
+	[super viewWillDisappear:animated];
+	
+//	[self resetButtonAction];
+	
 }
 
 
@@ -216,8 +231,12 @@
 }
 
 - (void)resetButtonAction{
-	self.startButton.userInteractionEnabled = YES;
-	[self addPanViews];
+	[RMAlertView showMessage:@"尚未实现"];
+//	[RMAlertView showMessage:@"重置成功"];
+//	self.startButton.userInteractionEnabled = YES;
+//	
+//	[self addPanViews];
+//	
 }
 
 - (UIButton *)rightButton{
@@ -234,7 +253,7 @@
 
 - (UIButton *)startButton{
 	if (!_startButton) {
-		UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(APP_SCREEN_WIDTH/2 - 100, APP_SCREEN_HEIGHT/2 + 200, 90, 50)];
+		UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(0, APP_SCREEN_HEIGHT - 64 - 50, APP_SCREEN_WIDTH/2, 50)];
 		[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 		button.backgroundColor = [UIColor redColor];
 		[button setTitle:@"开始" forState:UIControlStateNormal];
@@ -247,9 +266,9 @@
 
 - (UIButton *)resetButton{
 	if (!_resetButton) {
-		UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(APP_SCREEN_WIDTH/2 + 10, APP_SCREEN_HEIGHT/2 + 200, 90, 50)];
+		UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(APP_SCREEN_WIDTH/2, APP_SCREEN_HEIGHT - 64 - 50, APP_SCREEN_WIDTH/2, 50)];
 		[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-		button.backgroundColor = [UIColor redColor];
+		button.backgroundColor = [UIColor greenColor];
 		[button setTitle:@"重置" forState:UIControlStateNormal];
 		button.titleLabel.font = [UIFont systemFontOfSize:15.0];
 		[button addTarget:self action:@selector(resetButtonAction) forControlEvents:UIControlEventTouchUpInside];
