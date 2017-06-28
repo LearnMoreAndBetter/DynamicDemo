@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C298264F1F025953002AE642 /* SwingBallsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C298264E1F025953002AE642 /* SwingBallsVC.m */; };
 		C2AD4E291EF9FB63002381FB /* RMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2AD4E281EF9FB63002381FB /* RMAlertView.m */; };
+		C2BE8C271F03953A00ADB54E /* SwingBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BE8C261F03953A00ADB54E /* SwingBallView.m */; };
+		C2BE8C2B1F03A6F900ADB54E /* PendulumBallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BE8C2A1F03A6F900ADB54E /* PendulumBallVC.m */; };
+		C2BE8C2E1F03A70900ADB54E /* PendulumBallView.m in Sources */ = {isa = PBXBuildFile; fileRef = C2BE8C2D1F03A70900ADB54E /* PendulumBallView.m */; };
 		C2C3CFA21EF8E71B00361E83 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C3CFA11EF8E71B00361E83 /* main.m */; };
 		C2C3CFA51EF8E71C00361E83 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C3CFA41EF8E71C00361E83 /* AppDelegate.m */; };
 		C2C3CFA81EF8E71C00361E83 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C2C3CFA71EF8E71C00361E83 /* ViewController.m */; };
@@ -29,6 +32,12 @@
 		C2AD4E271EF9FB63002381FB /* RMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMAlertView.h; sourceTree = "<group>"; };
 		C2AD4E281EF9FB63002381FB /* RMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMAlertView.m; sourceTree = "<group>"; };
 		C2AD4E2D1EF9FED5002381FB /* CommonHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonHeader.h; sourceTree = "<group>"; };
+		C2BE8C251F03953A00ADB54E /* SwingBallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwingBallView.h; sourceTree = "<group>"; };
+		C2BE8C261F03953A00ADB54E /* SwingBallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwingBallView.m; sourceTree = "<group>"; };
+		C2BE8C291F03A6F900ADB54E /* PendulumBallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PendulumBallVC.h; sourceTree = "<group>"; };
+		C2BE8C2A1F03A6F900ADB54E /* PendulumBallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PendulumBallVC.m; sourceTree = "<group>"; };
+		C2BE8C2C1F03A70900ADB54E /* PendulumBallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PendulumBallView.h; sourceTree = "<group>"; };
+		C2BE8C2D1F03A70900ADB54E /* PendulumBallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PendulumBallView.m; sourceTree = "<group>"; };
 		C2C3CF9D1EF8E71B00361E83 /* DynamicDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2C3CFA11EF8E71B00361E83 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2C3CFA31EF8E71C00361E83 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -68,6 +77,8 @@
 			children = (
 				C298264D1F025953002AE642 /* SwingBallsVC.h */,
 				C298264E1F025953002AE642 /* SwingBallsVC.m */,
+				C2BE8C251F03953A00ADB54E /* SwingBallView.h */,
+				C2BE8C261F03953A00ADB54E /* SwingBallView.m */,
 			);
 			path = SwingBalls;
 			sourceTree = "<group>";
@@ -79,6 +90,17 @@
 				C2AD4E281EF9FB63002381FB /* RMAlertView.m */,
 			);
 			path = RMAlertView;
+			sourceTree = "<group>";
+		};
+		C2BE8C281F03A6E300ADB54E /* PendulumBall */ = {
+			isa = PBXGroup;
+			children = (
+				C2BE8C291F03A6F900ADB54E /* PendulumBallVC.h */,
+				C2BE8C2A1F03A6F900ADB54E /* PendulumBallVC.m */,
+				C2BE8C2C1F03A70900ADB54E /* PendulumBallView.h */,
+				C2BE8C2D1F03A70900ADB54E /* PendulumBallView.m */,
+			);
+			path = PendulumBall;
 			sourceTree = "<group>";
 		};
 		C2C3CF941EF8E71B00361E83 = {
@@ -104,6 +126,7 @@
 				C2E3CAA91F0244CB0084DAAA /* HannuoTower */,
 				C2E3CAB31F024E850084DAAA /* BallDynamics */,
 				C298264C1F025939002AE642 /* SwingBalls */,
+				C2BE8C281F03A6E300ADB54E /* PendulumBall */,
 				C2C3CFA61EF8E71C00361E83 /* ViewController.h */,
 				C2C3CFA71EF8E71C00361E83 /* ViewController.m */,
 				C2C3CFA31EF8E71C00361E83 /* AppDelegate.h */,
@@ -229,10 +252,13 @@
 				C2E3CAAF1F0244CB0084DAAA /* TowerLearnInstructionVC.m in Sources */,
 				C2E3CAAE1F0244CB0084DAAA /* HannuoTowerVC.m in Sources */,
 				C2C3CFA51EF8E71C00361E83 /* AppDelegate.m in Sources */,
+				C2BE8C2E1F03A70900ADB54E /* PendulumBallView.m in Sources */,
 				C2E3CAB21F0249DC0084DAAA /* HannuoTowerDemoVC.m in Sources */,
 				C298264F1F025953002AE642 /* SwingBallsVC.m in Sources */,
 				C2E3CAB81F024E850084DAAA /* RMDynamicImageView.m in Sources */,
 				C2E3CABB1F024EA40084DAAA /* BallDynamicVC.m in Sources */,
+				C2BE8C2B1F03A6F900ADB54E /* PendulumBallVC.m in Sources */,
+				C2BE8C271F03953A00ADB54E /* SwingBallView.m in Sources */,
 				C2C3CFA21EF8E71B00361E83 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

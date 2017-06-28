@@ -1,33 +1,29 @@
 //
-//  SwingBallsVC.m
+//  PendulumBallVC.m
 //  DynamicDemo
 //
-//  Created by 王林 on 2017/6/27.
+//  Created by 王林 on 2017/6/28.
 //  Copyright © 2017年 CETC. All rights reserved.
 //
 
-#import "SwingBallsVC.h"
-#import "SwingBallView.h"
+#import "PendulumBallVC.h"
+#import "PendulumBallView.h"
 
-@interface SwingBallsVC ()
+@interface PendulumBallVC ()
 
 @end
 
-@implementation SwingBallsVC
-
-
+@implementation PendulumBallVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
-	self.title = @"牛顿球";
-
-	SwingBallView *swingBallView = [[SwingBallView alloc]initWithFrame:self.view.bounds];
-	[self.view addSubview:swingBallView];
+	self.title = @"单摆";
 	
+	PendulumBallView *pendulumBallView = [[PendulumBallView alloc]initWithFrame:self.view.bounds];
+	[self.view addSubview:pendulumBallView];
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

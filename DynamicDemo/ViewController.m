@@ -11,6 +11,7 @@
 #import "BallDynamicVC.h"
 #import "HannuoTowerDemoVC.h"
 #import "SwingBallsVC.h"
+#import "PendulumBallVC.h"
 
 @interface ViewController ()
 
@@ -33,8 +34,8 @@
 }
 
 - (void)addSubviews{
-	NSArray *arr = @[@"物理仿真球", @"汉诺塔游戏", @"牛顿球"];
-	for (NSInteger i = 0; i < 3; i ++) {
+	NSArray *arr = @[@"物理仿真球", @"汉诺塔游戏", @"单摆", @"牛顿球"];
+	for (NSInteger i = 0; i < arr.count; i ++) {
 		UIButton *button = [[UIButton alloc]initWithFrame:CGRectMake(30, 100 + 70 * i, APP_SCREEN_WIDTH - 60, 50)];
 		button.tag = 101 + i;
 		[button setTitle:arr[i] forState:UIControlStateNormal];
@@ -63,6 +64,12 @@
 			break;
 		}
 		case 103:
+		{
+			//单摆
+			[self.navigationController pushViewController:[[PendulumBallVC alloc]init] animated:YES];
+			break;
+		}
+		case 104:
 		{
 			//牛顿球
 			[self.navigationController pushViewController:[[SwingBallsVC alloc]init] animated:YES];
